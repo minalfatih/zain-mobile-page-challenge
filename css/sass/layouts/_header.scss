@@ -1,0 +1,51 @@
+@use "../helpers/helpers" as *;
+@use "../helpers/colors";
+header {
+  nav {
+    .container {
+      .navbar-brand {
+        > img {
+          width: 100px;
+        }
+      }
+      .login {
+        background-color: $light-blue;
+      }
+    }
+    .navbar {
+      border: 1px solid $light-gray;
+      ul {
+        li {
+          span {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            color: $light-gray;
+            &.active,
+            &:hover {
+              color: $light-blue;
+            }
+            svg {
+              width: 30px;
+              fill: $light-gray;
+              &.active,
+              &:hover {
+                fill: $light-blue;
+              }
+            }
+          }
+        }
+        li:nth-child(2) {
+          span {
+            svg {
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

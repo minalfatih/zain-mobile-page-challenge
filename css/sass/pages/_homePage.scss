@@ -1,0 +1,192 @@
+@use "../helpers/helpers" as *;
+@use "../helpers/colors";
+
+// start sheiks section
+.sheiks {
+  display: flex;
+  &.remove {
+    display: none;
+  }
+  .row {
+    direction: rtl;
+    .box {
+      border-color: $light-gray;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: $rounded-6;
+        -webkit-border-radius: $rounded-6;
+        -moz-border-radius: $rounded-6;
+        -ms-border-radius: $rounded-6;
+        -o-border-radius: $rounded-6;
+      }
+      .sheiks-info {
+        p {
+          color: $black;
+          font-size: 13px;
+        }
+        span {
+          color: $light-gray;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+// end sheiks section
+
+// start playlist section
+.playlist {
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  &.remove {
+    display: none;
+  }
+  .container {
+    overflow: auto;
+    .row {
+      width: 200px;
+      animation: slide-right 10s linear infinite alternate;
+      -webkit-animation: slide-right 10s linear infinite alternate;
+      @include animation;
+      .box {
+        position: relative;
+        width: 200px;
+        height: auto;
+        flex-shrink: 0;
+        &::before {
+          position: absolute;
+          content: "";
+          top: -10px;
+          left: 50%;
+          transform: translate(-50%);
+          z-index: -1;
+          background-color: $light-blue;
+          opacity: 0.5;
+          width: 90%;
+          height: 20px;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: -15px;
+          left: 50%;
+          transform: translate(-50%);
+          z-index: -1;
+          background-color: $light-blue;
+          opacity: 0.2;
+          width: 80%;
+          height: 20px;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+        }
+        > img {
+          width: 200px;
+          height: 200px;
+          border-radius: $rounded-6;
+          -webkit-border-radius: $rounded-6;
+          -moz-border-radius: $rounded-6;
+          -ms-border-radius: $rounded-6;
+          -o-border-radius: $rounded-6;
+        }
+      }
+      .sheiks-info {
+        p {
+          color: $black;
+          font-size: 14px;
+        }
+        span {
+          color: $light-gray;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+// end playlist section
+
+// start trainding section
+.trainding {
+  display: flex;
+  justify-content: flex-end;
+  &.remove {
+    display: none;
+  }
+}
+// start trainding section
+
+// start audio
+.audio {
+  .audio-box {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #9b9999;
+    position: fixed;
+    bottom: 100px;
+    left: 0;
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 6px;
+    }
+    .info {
+      p {
+        color: $black;
+      }
+      span {
+        color: $light-gray;
+      }
+    }
+    .play-stop {
+      cursor: pointer;
+      .playAudio,
+      .stop {
+        background: $light-blue;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          fill: $white;
+          width: 12px;
+        }
+      }
+      .playAudio {
+        &.displed {
+          display: none;
+        }
+      }
+      .stop {
+        display: none;
+        &.active {
+          display: flex;
+        }
+      }
+      .fav {
+        fill: $light-gray;
+        width: 27px;
+        .heart {
+          &:hover {
+            @include transition;
+            fill: $light-gray;
+          }
+          &.active {
+            fill: rgb(255, 0, 98);
+          }
+        }
+      }
+    }
+  }
+}
+// end audio
