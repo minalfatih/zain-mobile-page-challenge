@@ -43,6 +43,13 @@
   &.remove {
     display: none;
   }
+  h1 {
+    @include md {
+      @media (min-width: #{$screen-md-min}) {
+        font-size: 20px;
+      }
+    }
+  }
   .container {
     overflow: auto;
     .row {
@@ -123,16 +130,73 @@
   }
 }
 // start trainding section
+.trainding {
+  h1 {
+    @include md {
+      @media (min-width: #{$screen-md-min}) {
+        font-size: 20px;
+      }
+    }
+  }
+}
+// end trainding section
 
 // start audio
 .audio {
   .audio-box {
     width: 100%;
-    padding: 10px 15px;
+    padding: 10px 15px 2px;
     border: 1px solid #9b9999;
     position: fixed;
     bottom: 100px;
     left: 0;
+    @include md {
+      @media (min-width: #{$screen-md-min}) {
+        bottom: 0;
+      }
+    }
+    > div {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      width: 100%;
+    }
+    progress {
+      width: 100%;
+      height: 5px;
+      appearance: none;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      background-color: #eee;
+      &::-webkit-progress-value {
+        background-color: $light-blue;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+      }
+      &::-moz-progress-bar {
+        background-color: $light-blue;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+      }
+      &::-webkit-progress-bar {
+        background-color: #eee;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+      }
+    }
+
     img {
       width: 45px;
       height: 45px;
@@ -147,9 +211,8 @@
       }
     }
     .play-stop {
-      cursor: pointer;
-      .playAudio,
-      .stop {
+      .playButton {
+        cursor: pointer;
         background: $light-blue;
         border-radius: 50%;
         width: 35px;
@@ -162,21 +225,11 @@
           width: 12px;
         }
       }
-      .playAudio {
-        &.displed {
-          display: none;
-        }
-      }
-      .stop {
-        display: none;
-        &.active {
-          display: flex;
-        }
-      }
       .fav {
         fill: $light-gray;
         width: 27px;
         .heart {
+          cursor: pointer;
           &:hover {
             @include transition;
             fill: $light-gray;

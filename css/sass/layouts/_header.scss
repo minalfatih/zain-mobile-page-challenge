@@ -12,9 +12,34 @@ header {
         background-color: $light-blue;
       }
     }
+    .nav-box {
+      display: flex;
+      gap: 15px;
+      @include md {
+        @media (min-width: #{$screen-md-min}) {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          gap: 20px;
+        }
+      }
+    }
     .navbar {
       border: 1px solid $light-gray;
+      @include md {
+        @media (min-width: #{$screen-md-min}) {
+          position: relative;
+          border: none;
+          padding: 0;
+        }
+      }
       ul {
+        @include md {
+          @media (min-width: #{$screen-md-min}) {
+            justify-content: flex-start;
+            gap: 40px;
+          }
+        }
         li {
           span {
             cursor: pointer;
@@ -35,6 +60,11 @@ header {
               &:hover {
                 fill: $light-blue;
               }
+              @include md {
+                @media (min-width: #{$screen-md-min}) {
+                  display: none;
+                }
+              }
             }
           }
         }
@@ -44,6 +74,15 @@ header {
               width: 20px;
             }
           }
+        }
+      }
+    }
+    .login {
+      @include md {
+        @media (min-width: #{$screen-md-min}) {
+          margin: 0;
+          text-align: center;
+          width: 150px;
         }
       }
     }

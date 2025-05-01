@@ -10,6 +10,11 @@ body {
 main {
   padding-bottom: 200px;
 }
+@media (min-width: 768px) and (min-width: 768px) {
+  main {
+    padding: 0;
+  }
+}
 
 header nav .container .navbar-brand > img {
   width: 100px;
@@ -17,8 +22,33 @@ header nav .container .navbar-brand > img {
 header nav .container .login {
   background-color: #5aada7;
 }
+header nav .nav-box {
+  display: flex;
+  gap: 15px;
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  header nav .nav-box {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+  }
+}
 header nav .navbar {
   border: 1px solid #9b9999;
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  header nav .navbar {
+    position: relative;
+    border: none;
+    padding: 0;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  header nav .navbar ul {
+    justify-content: flex-start;
+    gap: 40px;
+  }
 }
 header nav .navbar ul li span {
   cursor: pointer;
@@ -39,8 +69,20 @@ header nav .navbar ul li span svg {
 header nav .navbar ul li span svg.active, header nav .navbar ul li span svg:hover {
   fill: #5aada7;
 }
+@media (min-width: 768px) and (min-width: 768px) {
+  header nav .navbar ul li span svg {
+    display: none;
+  }
+}
 header nav .navbar ul li:nth-child(2) span svg {
   width: 20px;
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  header nav .login {
+    margin: 0;
+    text-align: center;
+    width: 150px;
+  }
 }
 
 .sheiks {
@@ -80,6 +122,11 @@ header nav .navbar ul li:nth-child(2) span svg {
 }
 .playlist.remove {
   display: none;
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .playlist h1 {
+    font-size: 20px;
+  }
 }
 .playlist .container {
   overflow: auto;
@@ -171,13 +218,65 @@ header nav .navbar ul li:nth-child(2) span svg {
   display: none;
 }
 
+@media (min-width: 768px) and (min-width: 768px) {
+  .trainding h1 {
+    font-size: 20px;
+  }
+}
+
 .audio .audio-box {
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px 15px 2px;
   border: 1px solid #9b9999;
   position: fixed;
   bottom: 100px;
   left: 0;
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .audio .audio-box {
+    bottom: 0;
+  }
+}
+.audio .audio-box > div {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+}
+.audio .audio-box progress {
+  width: 100%;
+  height: 5px;
+  appearance: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: #eee;
+}
+.audio .audio-box progress::-webkit-progress-value {
+  background-color: #5aada7;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.audio .audio-box progress::-moz-progress-bar {
+  background-color: #5aada7;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.audio .audio-box progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 .audio .audio-box img {
   width: 45px;
@@ -190,11 +289,8 @@ header nav .navbar ul li:nth-child(2) span svg {
 .audio .audio-box .info span {
   color: #9b9999;
 }
-.audio .audio-box .play-stop {
+.audio .audio-box .play-stop .playButton {
   cursor: pointer;
-}
-.audio .audio-box .play-stop .playAudio,
-.audio .audio-box .play-stop .stop {
   background: #5aada7;
   border-radius: 50%;
   width: 35px;
@@ -203,23 +299,16 @@ header nav .navbar ul li:nth-child(2) span svg {
   justify-content: center;
   align-items: center;
 }
-.audio .audio-box .play-stop .playAudio svg,
-.audio .audio-box .play-stop .stop svg {
+.audio .audio-box .play-stop .playButton svg {
   fill: #ffffff;
   width: 12px;
-}
-.audio .audio-box .play-stop .playAudio.displed {
-  display: none;
-}
-.audio .audio-box .play-stop .stop {
-  display: none;
-}
-.audio .audio-box .play-stop .stop.active {
-  display: flex;
 }
 .audio .audio-box .play-stop .fav {
   fill: #9b9999;
   width: 27px;
+}
+.audio .audio-box .play-stop .fav .heart {
+  cursor: pointer;
 }
 .audio .audio-box .play-stop .fav .heart:hover {
   transition: 0.1s linear;
